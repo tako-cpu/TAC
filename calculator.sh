@@ -1,5 +1,4 @@
 #! /usr/bin/bash
-#AUTHOR: John Rhey Damian
 #DESCRIPTION: A time aggregator and calculator for courses watch time
 
 #Check if 'stash' directory exists
@@ -27,7 +26,7 @@ COUNTER=0
 while true
 do
 	COUNTER=$(( COUNTER + 1 ))
-	echo "#${COUNTER}:"
+	echo "Time Batch #${COUNTER}:"
 	read -p "     Enter Hours (Enter '-1' to exit): " _HOURS
 	if [ "${_HOURS}" -lt 0 ]
 	then
