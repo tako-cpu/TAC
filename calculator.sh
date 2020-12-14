@@ -13,7 +13,8 @@ if [ "$#" -ne 0 ]
 then
 	echo "Your file to be opened: '$1'"
 	SUM=$(awk '{SUM+=$1} END {print SUM}' "$1")
-	echo "Your Total Hours: $(( SUM / 3600 ))"
+	TOTALHOURS=$(awk -v sum="$SUM" 'BEGIN {print sum/3600}')
+	echo "Your Total Hours: ${TOTALHOURS}"
 	echo "Your Total Seconds: ${SUM}"
 	exit
 fi
